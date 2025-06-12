@@ -1,16 +1,20 @@
 name = "pickle-tts"
 compatibility_date = "2025-06-12"
+main = "workers-site/index.js"
 
+# 指定静态资产目录
 [site]
 bucket = "./"
 
-[routes]
+# 正确的routes数组格式
+[[routes]]
 pattern = "/api/*"
-script = "/api/[[path]].js"
+script = "/api/[path].js"
 
-[headers]
+# 正确的headers格式
+[[headers]]
 for = "/*"
-  [headers.values]
-  Access-Control-Allow-Origin = "*"
-  Access-Control-Allow-Methods = "GET, POST, OPTIONS"
-  Access-Control-Allow-Headers = "Content-Type, x-auth-token"
+[headers.values]
+Access-Control-Allow-Origin = "*"
+Access-Control-Allow-Methods = "GET, POST, OPTIONS" 
+Access-Control-Allow-Headers = "Content-Type, x-auth-token"
