@@ -1,0 +1,16 @@
+name = "pickle-tts"
+compatibility_date = "2025-06-12"
+
+[site]
+bucket = "./"
+
+[routes]
+pattern = "/api/*"
+script = "/api/[[path]].js"
+
+[headers]
+for = "/*"
+  [headers.values]
+  Access-Control-Allow-Origin = "*"
+  Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+  Access-Control-Allow-Headers = "Content-Type, x-auth-token"
